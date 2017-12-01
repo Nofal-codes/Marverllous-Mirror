@@ -14,22 +14,18 @@ class TrafficMap extends Component {
     super(props);
     this.initMap = this.initMap.bind(this);
 
-
-      this.state = {
-      };
-
   }
 
   componentDidMount() {
-    this.initMap();
-  }
+    this.initMap(); 
+    }
 
   render() {
     return (
-    <div>
-    <script src="maps.googleapis.com/maps/api/js?v=3&sensor=true"></script>
+    <div className="Mapz">
     <script async defer src={mapScript}></script> 
-    <div id="map" className="map"></div>
+    <script async defer src="maps.googleapis.com/maps/api/js?v=3&sensor=true"></script>
+    <div id="map" className="Mapz"></div>
     </div>  
     
       
@@ -41,7 +37,8 @@ class TrafficMap extends Component {
   initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 13,
-      center: {lat: 34.04924594193164, lng: -118.24104309082031}
+      center: {lat: 34.04924594193164, lng: -118.24104309082031},
+      disableDefaultUI: true
     });
 
     var trafficLayer = new google.maps.TrafficLayer();

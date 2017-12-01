@@ -1,5 +1,14 @@
 body {
-  margin: 0;
-  padding: 0;
+  margin: 20px;
+  padding: 20px;
   font-family: sans-serif;
+}
+
+#Mapz {
+  height:200px;
+}
+
+.col-md-2{
+  width: 50%;
+  height: 180px;
 }
