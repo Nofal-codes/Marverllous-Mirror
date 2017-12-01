@@ -26,7 +26,7 @@ class Weather extends Component {
     
       //My Functions
     
-  
+   
     
     }
     
