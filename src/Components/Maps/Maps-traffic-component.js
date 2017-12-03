@@ -5,7 +5,6 @@ import './style.css';
 
 const google = window.google; //As mentioned in the user guide, you need to explicitly read any global variables from window.
 var mapKey = "AIzaSyAHkyUq8zg1wDeiTuo7-WUHDji16L8-3dU";
-var mapScript = "https://maps.googleapis.com/maps/api/js?key=" + mapKey + "&callback=initMap";
 
 
 class TrafficMap extends Component {
@@ -23,8 +22,6 @@ class TrafficMap extends Component {
   render() {
     return (
     <div className="Mapz">
-    <script async defer src={mapScript}></script> 
-    <script async defer src="maps.googleapis.com/maps/api/js?v=3&sensor=true"></script>
     <div id="map" className="Mapz"></div>
     </div>  
     
@@ -36,8 +33,8 @@ class TrafficMap extends Component {
 
   initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 13,
-      center: {lat: 34.04924594193164, lng: -118.24104309082031},
+      zoom: 10,
+      center: {lat: 25.23128015612677, lng: 55.37754819262773},
       disableDefaultUI: true
     });
 

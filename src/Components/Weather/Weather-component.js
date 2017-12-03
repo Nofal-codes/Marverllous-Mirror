@@ -19,8 +19,9 @@ class Weather extends Component {
     
       render() {
         return (
-          <a class="weatherwidget-io" href="https://forecast7.com/en/40d71n74d01/new-york/" data-label_1="NEW YORK" data-label_2="WEATHER" data-mode="Current" data-days="3" data-theme="pure" >NEW YORK WEATHER</a>
-   
+          <a class="weatherwidget-io" href="https://forecast7.com/en/25d2055d27/dubai/"  data-mode="Current" data-days="1" data-theme="pure" >Dubai </a>
+          //<a class="weatherwidget-io" href="https://forecast7.com/en/25d2055d27/dubai/" data-label_1="Dubai" data-mode="Current" data-days="3" data-theme="pure" >NEW YORK </a>
+
         );
       }
     

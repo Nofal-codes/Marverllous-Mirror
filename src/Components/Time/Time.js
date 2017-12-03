@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -22,17 +21,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">React m8</h1>
-          <h1 className="App-title">{ this.state.Myname }</h1>
-        </header>
-        <h1> { this.state.time } </h1>
-        <p className="App-intro">
-          lol <code>src/App.js</code> m8
-        </p>
-        <p className="App-intro">
-          Ahmad Nofal App
-        </p>
+        {//<h1 className="App-title">{ this.state.Myname }</h1>
+        }
+        <h2> { this.state.time } </h2>
       </div>
     );
   }
