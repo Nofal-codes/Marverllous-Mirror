@@ -1,34 +1,79 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class Weather extends Component {
-    
-      constructor(props){
-        super(props);
-    
-          this.state = {
-  
-          };
+
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+    };
+
+    //openmap api with key for dubai
+    var apiKey = "ebe8fde725567e04bd1e8c0742900ac2"
+    this.URL = "https://api.openweathermap.org/data/2.5/find?q=Dubai,AE&units=metric&appid=" + apiKey;
+
+
+  }
+
+  componentWillMount() {
+
+
+  }
+
+  componentDidMount() {
+    fetch(this.URL)
+      .then(res => res.json())
+      .then((result) => {
+
+        // check if the http request is ok and set state
+        if (result.cod == "200") {
+        this.setState({
+          isLoaded: true,
+          OpenWeatherJson: result
+        });
+      } else {
+        this.setState({
+          isLoaded: false,
+        });
+      }
+      // end of setstate with checking
+
+      },
+      // Note: it's important to handle errors here
+      // instead of a catch() block so that we don't swallow
+      // exceptions from actual bugs in components.
+      (error) => {
+
+        this.setState({
+          isLoaded: false,
+          error
+        });
 
       }
-    
-      componentDidMount() {
-  
-        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://weatherwidget.io/js/widget.min.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","weatherwidget-io-js");
-  
-      }
-    
-      render() {
-        return (
-          <a class="weatherwidget-io" href="https://forecast7.com/en/25d2055d27/dubai/"  data-mode="Current" data-days="1" data-theme="pure" >Dubai </a>
-          //<a class="weatherwidget-io" href="https://forecast7.com/en/25d2055d27/dubai/" data-label_1="Dubai" data-mode="Current" data-days="3" data-theme="pure" >NEW YORK </a>
 
-        );
-      }
-    
-      //My Functions
-    
-   
-    
-    }
-    
-  export default Weather;
+      )
+
+  }
+
+  render() {
+
+    if (this.state.isLoaded != true) {
+    return ( <p>{"Loading"}</p> );
+    } else {
+    return (
+      <p>{this.state.OpenWeatherJson.list[0].name + " "
+        + this.state.OpenWeatherJson.list[0].main.temp + " "
+        + this.state.OpenWeatherJson.list[0].weather[0].description}</p>
+    );}
+
+  }
+
+  //My Functions
+
+
+
+}
+
+export default Weather;
