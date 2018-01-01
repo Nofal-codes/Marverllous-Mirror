@@ -36,6 +36,7 @@ class TrafficMap extends Component {
       zoom: 10,
       center: {lat: 25.23128015612677, lng: 55.37754819262773},
       disableDefaultUI: true
+      ,'draggable': false
     });
 
     var trafficLayer = new google.maps.TrafficLayer();
