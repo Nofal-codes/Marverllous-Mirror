@@ -9,6 +9,8 @@ import TrafficMap from './Components/Maps/Maps-traffic-component';
 
 import registerServiceWorker from './registerServiceWorker';
 
+console.log(React.version);
+
 ReactDOM.render(<Time />, document.getElementById('time'));
 ReactDOM.render(<Weather />, document.getElementById('weather'));
 ReactDOM.render(<TrafficMap />, document.getElementById('Mapz'));
