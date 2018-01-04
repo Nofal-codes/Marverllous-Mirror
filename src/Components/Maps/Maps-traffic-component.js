@@ -59,7 +59,7 @@ class TrafficMap extends Component {
     });
 
     var trafficLayer = new google.maps.TrafficLayer();
-    trafficLayer.setMap(this.map);
+    trafficLayer.setMap(map);
   }
 
   //end
