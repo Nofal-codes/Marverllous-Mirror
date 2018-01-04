@@ -27,7 +27,7 @@ class Weather extends Component {
       .then((result) => {
 
         // check if the http request is ok and set state
-        if (result.cod == "200") {
+        if (result.cod === "200") {
         this.setState({
           isLoaded: true,
           OpenWeatherJson: result
@@ -58,7 +58,7 @@ class Weather extends Component {
 
   render() {
 
-    if (this.state.isLoaded != true) {
+    if (this.state.isLoaded !== true) {
     return ( <p>{"Loading"}</p> );
     } else {
     return (
